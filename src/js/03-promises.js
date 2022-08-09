@@ -11,8 +11,8 @@ form.addEventListener('submit', buttonSubmit);
 function buttonSubmit(event) {
   event.preventDefault();
 
-  // let amount = Number(event.target.amount.value);
-  let amount = event.target.amount.value
+  let amount = Number(event.target.amount.value);
+
 
   let delay = Number(event.target.delay.value);
   let step = Number(event.target.step.value);

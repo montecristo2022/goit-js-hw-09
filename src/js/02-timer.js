@@ -18,10 +18,18 @@ const minutes = document.querySelector('[data-minutes]')
 const seconds = document.querySelector('[data-seconds]')
 const body = document.querySelector('body')
 const DELAY = 1000;
-const minutesSpan = document.querySelector('.label1')
 let timeOfUser = null;
 
 button.addEventListener('click', startTimer)
+
+
+
+
+Notiflix.Notify.info('Добро пожаловать в таймер обратного отсчета времениl. Будь осторожен с функционалом, у разраба кривые руки', {
+    timeout: 6000,
+  },)
+
+
 
 const options = {
     enableTime: true,
@@ -34,10 +42,14 @@ const options = {
       timeOfUser = selectedDates[0].getTime();
       console.log(selectedDates[0]);
       if (selectedDates[0] < new Date()) {
-Notiflix.Notify.failure('Выберете дату в будущем')
+Notiflix.Notify.failure('Выберете дату в будущем',{
+    timeout: 4000,
+  })
       } else {
             button.removeAttribute('disabled')
-       Notiflix.Notify.success('Дата выбрана, вы можете запускать таймер')
+       Notiflix.Notify.success('Дата выбрана, вы можете запускать таймер',{
+    timeout: 4000,
+  })
       }
     
     },
@@ -67,7 +79,6 @@ function startTimer() {
             seconds.textContent = pad(time.seconds)
              console.log(time)
         }
-        
 
 
         
@@ -75,6 +86,7 @@ function startTimer() {
         
     }, DELAY);
 }
+
 
 
 

@@ -25,7 +25,7 @@ button.addEventListener('click', startTimer)
 
 
 
-Notiflix.Notify.info('Добро пожаловать в таймер обратного отсчета времениl. Будь осторожен с функционалом, у разраба кривые руки', {
+Notiflix.Notify.info('Добро пожаловать в таймер обратного отсчета времениl. Тут есть баги, надеюсь ты их не найдешь, дорогой юзер', {
     timeout: 6000,
   },)
 
@@ -47,7 +47,7 @@ Notiflix.Notify.failure('Выберете дату в будущем',{
   })
       } else {
             button.removeAttribute('disabled')
-       Notiflix.Notify.success('Дата выбрана, вы можете запускать таймер',{
+       Notiflix.Notify.success('Вы можете запустить таймер нажав на кнопку srart или клавишу enter',{
     timeout: 4000,
   })
       }
@@ -118,9 +118,13 @@ function convertMs(ms) {
 
 
 
-
-
-
+document.addEventListener("keydown", event => {
+    if (event.key === 'Enter') {
+        startTimer()
+    }
+//   console.log("key: ", event.key);
+//   console.log("code: ", event.code);
+});
 
 
 // let id = null;
